@@ -17,8 +17,12 @@ phonebookApp.config(['$routeProvider',
                 controller: 'PhoneBookCtrl'
             }).
             when('/contact-info/:contact', {
-                templateUrl: 'partials/contact_info.html',
+                templateUrl: 'partials/contacts.html',
                 controller: 'ContactInfoCtrl'
+            }).
+            when('/edit-contact/:contact', {
+                templateUrl: 'partials/edit.html',
+                controller: 'EditContactCtrl'
             }).
             otherwise({
                 redirectTo: '/'
