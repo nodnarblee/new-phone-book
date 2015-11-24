@@ -4,27 +4,32 @@
 
 var phonebookControllers = angular.module('phonebookControllers', []);
 
-phonebookControllers.controller('PhoneBookCtrl', ['$scope', 'contactService', '$http',
-    function($scope, contactService, $http){
-        $scope.phonebook = [];
-        //contactService.getContacts()
-        contactService.query()
-        //    .then(function(data){
-        //    $scope.phonebook = data;
-        //});
+phonebookControllers.controller('PhoneBookCtrl', ['$scope', '$http', 'contactService',
+    function($scope, $http, contactService) {
 
+        $scope.phonebook = contactService.getContacts();
+        $scope.phonebook.success(function(data) {
+            $scope.phonebook = data;
+        });
 
-        //$http.get('assets/contacts.json').success(function(data) {
-        //    $scope.phonebook = contactService
-            //console.log($scope.phonebook)
-
-        //});
     }]);
 
-phonebookControllers.controller('ContactInfoCtrl', ['$scope',
-    function ($scope, $routeParams){
-        //var contact = $routeParams
-        //var index = $routeParams.contact_index;
-        //$scope.currentContact = $scope.contacts[index];
-    }]);
+phonebookControllers.controller('ContactInfoCtrl', ['$scope', 'contactService', '$routeParams',
+    function($scope, contactService, $routeParams) {
 
+        //since the contacts dont have ID's, I used the phone-number as the unique identifier for each contact.
+        $scope.number = $routeParams.contact;
+        $scope.phonebook = {};
+
+        $scope.getContacts = contactService.getContacts();
+        $scope.getContacts.success(function(data) {
+            $scope.phonebook = data;
+        })
+        .then(function(){
+            var contactsArr = $scope.phonebook.contacts;
+            contactsArr.forEach(function(contact){
+                // this evaluates the phone-number and sets the $scopeCurrentContact if a match is found, otherwise null.
+                $scope.number === contact.phone ? $scope.currentContact = contact : null;
+            })
+        });
+    }]);

@@ -13,11 +13,11 @@ phonebookApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/', {
-                templateUrl: 'index.html',
+                templateUrl: 'partials/contacts.html',
                 controller: 'PhoneBookCtrl'
             }).
             when('/contact-info/:contact', {
-                templateUrl: '/partials/contact_info.html',
+                templateUrl: 'partials/contact_info.html',
                 controller: 'ContactInfoCtrl'
             }).
             otherwise({
