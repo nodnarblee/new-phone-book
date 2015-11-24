@@ -11,7 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.2.0",
+    "angular-resource": "^1.4.8",
+    "angular-route": "1.4.x",
+    "bootstrap": "~3.1.1",
     "connect": "^3.4.0",
+    "express": "^4.13.3",
     "serve-static": "^1.10.0"
   }
 }

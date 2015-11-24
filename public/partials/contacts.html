@@ -1,0 +1,15 @@
+<div ng-controller="PhoneBookCtrl as phone">
+
+    <!-- contacts content w/ search bar-->
+    <div>
+        Search: <input ng-model="query">
+
+        <ul ng-repeat="person in phonebook.contacts | filter:query">
+            <a ng-href="#/contact-info/{{person.phone}}">
+                <!--<a ng-href="#/contact-info/{{contacts.indexOf(contact)}}">-->
+                {{person.lastname}}, {{person.firstname}}
+            </a>
+        </ul>
+    </div>
+
+</div>
