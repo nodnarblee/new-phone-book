@@ -9,7 +9,7 @@
 	<title></title>
 
 	<!-- CSS -->
-
+	<link rel="stylesheet" href="styles/app.css">
 
 	<!-- SCRIPTS -->
 	<script src="/angular.js"></script>
@@ -18,31 +18,21 @@
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/services.js"></script>
+	<script src="js/directives.js"></script>
 </head>
 
 <body>
-
 <!-- CONTENT -->
+<div ng-controller="PhoneBookCtrl as phone">
+	Search: <input ng-model="query">
+	<ul ng-repeat="person in phonebook.contacts | filter:query">
+		<a ng-href="#/contact-info/{{person.phone}}" ng-click="templateSelect('contact-info')">
+			{{person.lastname}}, {{person.firstname}}
+		</a>
+	</ul>
+</div>
 
 	<div ng-view></div>
- <!--<div ng-controller="PhoneBookCtrl as phone">-->
 
-	 <!--&lt;!&ndash; contacts content w/ search bar&ndash;&gt;-->
-	 <!--<div>-->
-		 <!--Search: <input ng-model="query">-->
-
-		 <!--<ul ng-repeat="person in phonebook.contacts | filter:query">-->
-			 <!--<a ng-href="#/contact-info/{{person.phone}}">-->
-			 <!--&lt;!&ndash;<a ng-href="#/contact-info/{{contacts.indexOf(contact)}}">&ndash;&gt;-->
-			 <!--{{person.lastname}}, {{person.firstname}}-->
-			 <!--</a>-->
-		 <!--</ul>-->
-	 <!--</div>-->
-
- <!--</div>-->
-
- <div>
-
- </div>
 </body>
 </html>

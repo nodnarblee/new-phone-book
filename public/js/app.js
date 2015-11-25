@@ -6,7 +6,8 @@ var phonebookApp = angular.module('phonebookApp', [
     'ngRoute',
     'ngResource',
     'phonebookControllers',
-    'phonebookServices'
+    'phonebookServices',
+    'phonebookDirectives'
 ]);
 
 phonebookApp.config(['$routeProvider',
@@ -14,11 +15,11 @@ phonebookApp.config(['$routeProvider',
         $routeProvider.
             when('/', {
                 templateUrl: 'partials/contacts.html',
-                controller: 'PhoneBookCtrl'
+                controller: 'PhoneBookCtrl as phone'
             }).
             when('/contact-info/:contact', {
-                templateUrl: 'partials/contacts.html',
-                controller: 'ContactInfoCtrl'
+                templateUrl: 'partials/contact_info.html',
+                controller: 'ContactInfoCtrl as contact'
             }).
             when('/edit-contact/:contact', {
                 templateUrl: 'partials/edit.html',

@@ -1,15 +1,36 @@
-<div ng-controller="PhoneBookCtrl as phone">
-
+<!--<div>-->
     <!-- contacts content w/ search bar-->
-    <div>
-        Search: <input ng-model="query">
+    <!--<div>-->
+        <!--Search: <input ng-model="query">-->
+        <!--<ul ng-repeat="person in phonebook.contacts | filter:query">-->
+            <!--<a ng-href="#/contact-info/{{person.phone}}" ng-click="templateSelect('contact-info')">-->
+                <!--{{person.lastname}}, {{person.firstname}}-->
+            <!--</a>-->
+        <!--</ul>-->
+    <!--</div>-->
 
-        <ul ng-repeat="person in phonebook.contacts | filter:query">
-            <a ng-href="#/contact-info/{{person.phone}}">
-                <!--<a ng-href="#/contact-info/{{contacts.indexOf(contact)}}">-->
-                {{person.lastname}}, {{person.firstname}}
-            </a>
-        </ul>
-    </div>
+    <!--<div ng-switch="templateView">-->
 
-</div>
+        <!--&lt;!&ndash;<div ng-show="defaultTemplate">&ndash;&gt;-->
+        <!--<div ng-switch-when="default">-->
+            <!--&lt;!&ndash;<div ng-if="templateView == 'default'">&ndash;&gt;-->
+                <!--Please Select a contact.-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash;<div ng-show="contactPartial">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div ng-if="templateView == 'contact-info'">&ndash;&gt;-->
+        <!--<div ng-switch-when="contact-info">-->
+            <!--<div ng-include src="'partials/contact_info.html'"></div>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash;<div ng-show="editPartial">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div ng-if="templateView == 'edit'">&ndash;&gt;-->
+        <!--<div ng-switch-when="edit">-->
+            <!--<div ng-include src="'partials/edit.html'"></div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--</div>-->
+
+<!--</div>-->

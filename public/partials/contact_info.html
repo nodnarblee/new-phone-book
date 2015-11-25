@@ -1,8 +1,12 @@
-<div id="contact-ctrl" ng-controller="ContactInfoCtrl as contact">
+<div>
+        <div>
+            <ul> Name: {{ currentContact.firstname }} {{ currentContact.lastname }} </ul>
+            <ul> Email: {{ currentContact.email }} </ul>
+            <ul> Phone: {{ currentContact.phone }} </ul>
+            <ul> Address: {{ currentContact.address }} </ul>
 
-    <ul> Name: {{ currentContact.firstname }} {{ currentContact.lastname }} </ul>
-    <ul> Email: {{ currentContact.email }} </ul>
-    <ul> Phone: {{ currentContact.phone }} </ul>
-    <ul> Address: {{ currentContact.address }} </ul>
-
+            <a ng-click = "templateSelect('edit')" ng-href="#/edit-contact/{{currentContact.phone}}">
+                Edit
+            </a>
+        </div>
 </div>
