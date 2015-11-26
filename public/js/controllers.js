@@ -34,6 +34,9 @@ phonebookControllers.controller('ContactInfoCtrl', ['$scope', 'contactService', 
 phonebookControllers.controller('EditContactCtrl', ['$scope', '$routeParams', 'contactService', 'setContactService',
     function($scope, $routeParams, contactService, setContactService) {
 
+        // I separated out the EditContactCtrl for extensibility reasons, although the code is mostly the same
+        // as the ContactInfoCtrl.
+
         $scope.number = $routeParams.contact;
 
         $scope.phonebook = contactService.allContacts

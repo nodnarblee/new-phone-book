@@ -32,4 +32,5 @@ phonebookServices.factory('setContactService', [
             }
         };
         return setContact;
+
     }]);

@@ -29,7 +29,6 @@ describe('phonebookApp controllers', function() {
 
         });
 
-
     });
 
     //ContactInfoController
@@ -58,19 +57,7 @@ describe('phonebookApp controllers', function() {
                 expect($scope.phonebook).toEqual(contacts);
 
             });
-
-            it('sets the current contact based on the route params passed', function () {
-
-                var controller = $controller('PhoneBookCtrl', { $scope: $scope, $routeParams: "6049881822" });
-                var contacts = contactService.allContacts;
-                $scope.number = $routeParams
-
-                expect($scope.number).toEqual($routeParams)
-
-            });
         });
-
-
 
     });
 
@@ -101,15 +88,6 @@ describe('phonebookApp controllers', function() {
 
             });
 
-            it('sets the current contact based on the route params passed', function () {
-
-                var controller = $controller('PhoneBookCtrl', { $scope: $scope, $routeParams: "6049881822" });
-                var contacts = contactService.allContacts;
-                $scope.number = $routeParams
-
-                expect($scope.number).toEqual($routeParams)
-
-            });
         });
     });
 });
