@@ -6,8 +6,7 @@ var phonebookApp = angular.module('phonebookApp', [
     'ngRoute',
     'ngResource',
     'phonebookControllers',
-    'phonebookServices',
-    'phonebookDirectives'
+    'phonebookServices'
 ]);
 
 phonebookApp.config(['$routeProvider',

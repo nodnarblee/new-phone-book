@@ -4,6 +4,7 @@
 
 var phonebookServices = angular.module('phonebookServices', []);
 
+// a service to retrieve all contacts from contacts.json to share between the controllers
 phonebookServices.factory('contactService', ['$http',
     function($http){
 
@@ -13,27 +14,8 @@ phonebookServices.factory('contactService', ['$http',
                 method: 'GET',
                 url: 'assets/contacts.json'
             })
-            .success(function(data){
-                data.contacts
-            });
-
+            //.success(function(data){
+            //    data.contacts
+            //});
         return phonebook
-    }]);
-
-phonebookServices.factory('templateService',['$rootScope',
-    function($rootScope) {
-        var templateService = {};
-
-        templateService.view = '';
-
-        templateService.prepForBroadcast = function(view) {
-            this.message = view;
-            this.broadcastItem();
-        };
-
-        templateService.broadcastItem = function() {
-            $rootScope.$broadcast('handleTemplate');
-        };
-
-        return templateService;
     }]);

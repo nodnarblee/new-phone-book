@@ -1,13 +1,17 @@
-<div>
-    <p>Edit mode</p>
-    First name: <input id="firstname" ng-model="currentContact.firstname">
-    Last name: <input id="lastname" ng-model="currentContact.lastname">
-    Email: <input id="email" ng-model="currentContact.email">
-    Phone number: <input id="phone" ng-model="currentContact.phone">
-    Address: <input id="phone" ng-model="currentContact.address">
+<div class="list-group-item full-height-container contact-info">
+    <h3>Edit Mode</h3>
+    <div class="form-group">
+        First name: <input class="form-control" id="firstname" ng-model="currentContact.firstname">
+        Last name: <input class="form-control" id="lastname" ng-model="currentContact.lastname">
+        Email: <input class="form-control" id="email" ng-model="currentContact.email">
+        Phone number: <input class="form-control" id="phone" ng-model="currentContact.phone">
+        Address: <input class="form-control" id="phone" ng-model="currentContact.address">
+    </div>
 
-    <a ng-click="switchView('view-mode')" ng-href="#/">
-        Back
-    </a>
+    <span class="pull-right back-button">
+        <a ng-href="#/contact-info/{{currentContact.phone}}">
+            <button>Back</button>
+        </a>
+    </span>
 </div>
 

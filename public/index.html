@@ -9,6 +9,8 @@
 	<title></title>
 
 	<!-- CSS -->
+
+	<link rel="stylesheet" href="/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="styles/app.css">
 
 	<!-- SCRIPTS -->
@@ -23,16 +25,36 @@
 
 <body>
 <!-- CONTENT -->
-<div ng-controller="PhoneBookCtrl as phone">
-	Search: <input ng-model="query">
-	<ul ng-repeat="person in phonebook.contacts | filter:query">
-		<a ng-href="#/contact-info/{{person.phone}}" ng-click="templateSelect('contact-info')">
-			{{person.lastname}}, {{person.firstname}}
-		</a>
-	</ul>
-</div>
+<div class="container full-height">
 
-	<div ng-view></div>
+
+		<div class="row panel logo-panel">
+			<img class="header-logo" src="assets/ch_logos/ch-logo-2013.png">
+		</div>
+		<!-- contact list -->
+		<div class="row panel panel-primary full-height-container" ng-controller="PhoneBookCtrl as phone">
+			<div class="col-xs-5 col-md-4 panel-body full-height">
+				<ul class="list-group full-height">
+					<li class="list-group-item full-height-container contact-list"> <h3> All Contacts </h3>
+						<input class="form-control" ng-model="query" placeholder="Search">
+						<contact class="list-group-item contacts" ng-repeat="person in phonebook.contacts | filter:query">
+							<a ng-href="#/contact-info/{{person.phone}}" ng-click="templateSelect('contact-info')">
+								{{person.lastname}}, {{person.firstname}}
+							</a>
+						</contact>
+					</li>
+				</ul>
+			</div>
+
+			<!-- contact details panel -->
+			<div class="col-xs-7 col-md-8 nopadding full-height-container">
+				<div class="list-group panel-body full-height">
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+
+</div>
 
 </body>
 </html>

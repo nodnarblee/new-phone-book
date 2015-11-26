@@ -18,7 +18,6 @@ phonebookControllers.controller('PhoneBookCtrl', ['$scope', '$http', 'contactSer
 
 phonebookControllers.controller('ContactInfoCtrl', ['$scope', 'contactService', '$routeParams',
     function($scope, contactService, $routeParams) {
-
         //since the contacts dont have ID's, I used the phone-number as the unique identifier for each contact.
         $scope.number = $routeParams.contact;
 
@@ -41,6 +40,7 @@ phonebookControllers.controller('ContactInfoCtrl', ['$scope', 'contactService', 
 
 phonebookControllers.controller('EditContactCtrl', ['$scope', '$routeParams', 'contactService',
     function($scope, $routeParams, contactService) {
+
         $scope.number = $routeParams.contact;
 
         $scope.phonebook = contactService.allContacts
