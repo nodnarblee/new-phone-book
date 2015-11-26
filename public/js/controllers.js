@@ -6,7 +6,7 @@ var phonebookControllers = angular.module('phonebookControllers', []);
 
 phonebookControllers.controller('PhoneBookCtrl', ['$scope', '$http', 'contactService',
     function($scope, $http, contactService) {
-        // handles fetching the contact data
+        // handles fetching the contact data from the contactService
         $scope.phonebook = contactService.allContacts
 
         $scope.phonebook.success(function(data) {
@@ -26,6 +26,8 @@ phonebookControllers.controller('ContactInfoCtrl', ['$scope', 'contactService', 
             $scope.phonebook = data;
         })
         .then(function(){
+            // the currentContact is being set by the currentContact function, here i'm passing in the phonenumber
+            // from the routeParams when a contact is selected.
             $scope.currentContact = setContactService.currentContact($scope.phonebook, $scope.number);
         });
 

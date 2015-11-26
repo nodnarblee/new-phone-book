@@ -71,7 +71,6 @@ describe('phonebookApp controllers', function() {
 
         beforeEach(inject(function($rootScope, _$controller_, _contactService_, _$routeParams_){
 
-            // The injector unwraps the underscores (_) from around the parameter names when matching
             $scope = $rootScope.$new();
             $controller = _$controller_;
             contactService = _contactService_;

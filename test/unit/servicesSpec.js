@@ -62,35 +62,6 @@ describe('phonebookApp controllers', function() {
             });
         });
 
-
-    });
-
-    describe('setContactService', function () {
-
-        beforeEach(module('phonebookApp'));
-
-        var $scope, contactService, setContactService, $controller, $routeParams;
-
-        beforeEach(inject(function ($rootScope, _contactService_, _setContactService_, _$routeParams_, _$controller_) {
-            $scope = $rootScope.$new();
-            contactService = _contactService_;
-            setContactService = _setContactService_;
-            $routeParams = _$routeParams_;
-            $controller = _$controller_;
-        }));
-
-        it("should set the current contact based on the routeParams from selecting a contact", function () {
-
-            var controller = $controller('PhoneBookCtrl',
-                { $scope: $scope, $routeParams: "6049881822", contactService : contactService, setContactService: setContactService });
-
-            var contact = contactService.allContacts
-            $scope.currentContact = setContactService.currentContact(contact, $routeParams);
-            expect($scope.currentContact.firstname).toEqual('Ryan')
-
-        });
-
-
     });
 
 });

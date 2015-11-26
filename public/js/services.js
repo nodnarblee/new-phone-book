@@ -15,6 +15,7 @@ phonebookServices.factory('contactService', ['$http',
                 url: 'assets/contacts.json'
             })
         return phonebook
+
     }]);
 
 // a service to set the current contact when a contact is selected, shared between controllers
