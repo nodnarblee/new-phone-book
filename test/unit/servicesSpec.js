@@ -13,7 +13,6 @@ describe('contactService', function() {
 
     it("should retrieve the contact list data", function() {
         httpBackend.whenGET("assets/contacts.json").respond({
-
             "contacts":[
                 {
                     "firstname":"Cameron",

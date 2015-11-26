@@ -2,6 +2,4 @@
 
 /* Directives */
 
-//var phonebookDirectives = angular.module('phonebookDirectives', []);
-
 
